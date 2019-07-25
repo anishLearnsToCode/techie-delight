@@ -16,4 +16,15 @@ public class StdIn {
             array[index] = scanner.nextInt();
         }
     }
+
+    public static int[] getArray(int length) {
+        int[] array = new int[length];
+        getIntInput(array);
+        return array;
+    }
+
+    public static int[] takenputAndGetArray() {
+        int length = getIntInput();
+        return getArray(length);
+    }
 }
