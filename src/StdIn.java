@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class StdIn {
@@ -17,14 +19,25 @@ public class StdIn {
         }
     }
 
-    public static int[] getArray(int length) {
+    private static int[] getArray(int length) {
         int[] array = new int[length];
         getIntInput(array);
         return array;
     }
 
-    public static int[] takenputAndGetArray() {
+    public static int[] takeInputAndGetArray() {
         int length = getIntInput();
         return getArray(length);
+    }
+
+    public static List<Integer> takeInputAndGetList() {
+        int length = getIntInput();
+        List<Integer> list = new ArrayList<>();
+        for (int index = 0 ; index < length ; index++) {
+            int value = scanner.nextInt();
+            list.add(value);
+        }
+
+        return list;
     }
 }

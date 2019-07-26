@@ -1,7 +1,7 @@
 // https://www.techiedelight.com/find-minimum-sum-subarray-given-size-k/
 public class MinimumSumSubArraySizeK {
     public static void main(String[] args) {
-        int[] array = StdIn.takenputAndGetArray();
+        int[] array = StdIn.takeInputAndGetArray();
         int size = StdIn.getIntInput();
         System.out.println(minimumSumSubArrayOfSaxe(array, size));
     }

@@ -1,9 +1,7 @@
-import java.util.Arrays;
-
 // https://www.techiedelight.com/find-maximum-difference-between-two-elements-array/
 public class MaximumDifferenceBetween2ElementsInArray {
     public static void main(String[] args) {
-        int[] array = StdIn.takenputAndGetArray();
+        int[] array = StdIn.takeInputAndGetArray();
         System.out.println(maximumDifference(array));
     }
 

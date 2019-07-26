@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 // https://www.techiedelight.com/find-largest-number-possible-set-given-numbers/
 public class LargestNumberPossibleFromSetOfGivenNumbers {
     public static void main(String[] args) {
-        int[] array = StdIn.takenputAndGetArray();
+        int[] array = StdIn.takeInputAndGetArray();
         System.out.println(getLargestNumber(array));
     }
 

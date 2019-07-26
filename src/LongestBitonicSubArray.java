@@ -1,7 +1,7 @@
 // https://www.techiedelight.com/find-longest-bitonic-subarray-array/
 public class LongestBitonicSubArray {
   public static void main(String[] args) {
-    int[] array = StdIn.takenputAndGetArray();
+    int[] array = StdIn.takeInputAndGetArray();
     int result = lengthOfLongestBitonicSubArray(array);
     System.out.println(result);
   }

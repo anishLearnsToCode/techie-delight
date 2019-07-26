@@ -4,7 +4,7 @@ import java.util.List;
 // https://www.techiedelight.com/maximum-subarray-problem-kadanes-algorithm/
 public class MaximumSubarrayProblem_Kadanes {
     public static void main(String[] args) {
-        int[] array = StdIn.takenputAndGetArray();
+        int[] array = StdIn.takeInputAndGetArray();
         System.out.println(maximumSubArraySum(array));
     }
 

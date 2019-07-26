@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class SubArrayWithSumExists {
     public static void main(String[] args) {
-        int[] array = StdIn.takenputAndGetArray();
+        int[] array = StdIn.takeInputAndGetArray();
         int sum = StdIn.getIntInput();
         System.out.println(subArraySumExists(array, sum));
     }

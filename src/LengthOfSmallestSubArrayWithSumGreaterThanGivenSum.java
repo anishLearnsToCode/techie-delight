@@ -1,7 +1,7 @@
 // https://www.techiedelight.com/length-of-smallest-subarray-with-sum-greater-number/
 public class LengthOfSmallestSubArrayWithSumGreaterThanGivenSum {
     public static void main(String[] args) {
-        int[] array = StdIn.takenputAndGetArray();
+        int[] array = StdIn.takeInputAndGetArray();
         int sum = StdIn.getIntInput();
         System.out.println(lengthOfSmallestSubArrayWithSumGreaterThan(array, sum));
     }
