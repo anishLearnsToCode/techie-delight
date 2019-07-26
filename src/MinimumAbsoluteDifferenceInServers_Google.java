@@ -10,11 +10,19 @@ public class MinimumAbsoluteDifferenceInServers_Google {
     System.out.println(result);
   }
 
+  private static int[] getIntArray(Integer[] array) {
+      int[] result = new int[array.length];
+      int index = 0;
+      for (int element : array) {
+          result[index++] = element;
+      }
+      return result;
+  }
+
   private static int minimumAbsoluteDifference(int[] array) {
+//    int[] intArray = getIntArray(array);
     int sum = Arrays.stream(array).sum();
     boolean[][] canCreateSumUsingSubset = getSubsetSumsData(array, (sum + 1) / 2) ;
-
-//    Printer.print(canCreateSumUsingSubset);
 
     for (int row = canCreateSumUsingSubset.length - 1, column = canCreateSumUsingSubset[0].length - 1 ; column >= 0 ; column--) {
       if (canCreateSumUsingSubset[row][column]) {
@@ -45,7 +53,7 @@ public class MinimumAbsoluteDifferenceInServers_Google {
         subsetSumExists[row][column] =
                 subsetSumExists[row-1][column]
                 || array[row] == column
-                || (array[row] < column ? subsetSumExists[row-1][column - array[row]] : false) ;
+                || (array[row] < column && subsetSumExists[row - 1][column - array[row]]) ;
 
       }
     }
