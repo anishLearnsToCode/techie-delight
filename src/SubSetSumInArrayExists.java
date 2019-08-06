@@ -1,7 +1,7 @@
 // https://www.techiedelight.com/find-subarray-having-given-sum-given-array/
 public class SubSetSumInArrayExists {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         int sum = StdIn.getIntInput();
         System.out.println(subArraySumExists(array, sum));
     }

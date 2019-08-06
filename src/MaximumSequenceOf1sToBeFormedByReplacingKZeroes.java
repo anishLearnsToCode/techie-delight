@@ -3,7 +3,7 @@ import java.util.LinkedList;
 // https://www.techiedelight.com/find-maximum-sequence-of-continuous-1s-can-formed-replacing-k-zeroes-ones/
 public class MaximumSequenceOf1sToBeFormedByReplacingKZeroes {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         int k = StdIn.getIntInput();
         System.out.println(maximumLengthFormed(array, k));
     }

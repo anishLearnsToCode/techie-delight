@@ -1,8 +1,8 @@
 // https://www.techiedelight.com/find-maximum-sum-path-involving-elements-given-arrays/
 public class MaximumSumPathGivenElements {
     public static void main(String[] args) {
-        int[] first = StdIn.takeInputAndGetArray();
-        int[] second = StdIn.takeInputAndGetArray();
+        int[] first = StdIn.takeInputAndGetIntArray();
+        int[] second = StdIn.takeInputAndGetIntArray();
         System.out.println(maximumCommonSumPath(first, second));
     }
 

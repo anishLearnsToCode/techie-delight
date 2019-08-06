@@ -3,7 +3,7 @@ import java.util.List;
 
 public class LongestDecreasingSubSequence {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         System.out.println(longestDecreasingSubSequence(array));
     }
 

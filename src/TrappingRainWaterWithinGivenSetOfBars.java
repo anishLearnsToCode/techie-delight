@@ -1,7 +1,7 @@
 // https://www.techiedelight.com/trapping-rain-water-within-given-set-bars/
 public class TrappingRainWaterWithinGivenSetOfBars {
     public static void main(String[] args) {
-        int[] bars = StdIn.takeInputAndGetArray();
+        int[] bars = StdIn.takeInputAndGetIntArray();
         System.out.println(maxTrappedWater(bars));
     }
 

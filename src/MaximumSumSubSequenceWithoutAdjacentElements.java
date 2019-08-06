@@ -1,6 +1,6 @@
 public class MaximumSumSubSequenceWithoutAdjacentElements {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         System.out.println(maximumSumSubSequenceWithoutAdjacentElements(array));
     }
 

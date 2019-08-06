@@ -3,7 +3,7 @@ import java.util.List;
 
 public class StudentHeights__Google {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         System.out.println(minRows(array));
     }
 

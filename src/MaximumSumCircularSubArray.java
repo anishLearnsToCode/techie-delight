@@ -4,7 +4,7 @@ import java.util.List;
 // https://www.techiedelight.com/maximum-sum-circular-subarray/
 public class MaximumSumCircularSubArray {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         System.out.println(maximumSumCircularSubArrayRanges(array));
     }
 

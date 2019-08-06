@@ -3,7 +3,7 @@ import java.util.List;
 
 public class LongestIncreasingSubSequence {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         int result = longestIncreasingSubSequenceLength(array);
         System.out.println(result);
     }

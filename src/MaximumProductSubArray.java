@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class MaximumProductSubArray {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         System.out.println(maximumProductSubArray(array));
     }
 

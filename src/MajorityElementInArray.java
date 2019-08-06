@@ -5,7 +5,7 @@ import java.util.Map;
 // https://www.techiedelight.com/find-majority-element-in-an-array-boyer-moore-majority-vote-algorithm/
 public class MajorityElementInArray {
   public static void main(String[] args) {
-    int [] array = StdIn.takeInputAndGetArray();
+    int [] array = StdIn.takeInputAndGetIntArray();
     System.out.println(majorityElement(array));
   }
 

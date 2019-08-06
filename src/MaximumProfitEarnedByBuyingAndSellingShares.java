@@ -1,7 +1,7 @@
 // https://www.techiedelight.com/maximum-profit-earned-buying-and-selling-shares/
 public class MaximumProfitEarnedByBuyingAndSellingShares {
     public static void main(String[] args) {
-        int[] array = StdIn.takeInputAndGetArray();
+        int[] array = StdIn.takeInputAndGetIntArray();
         System.out.println(maximumProfit(array));
     }
 

@@ -1,7 +1,7 @@
 // https://www.techiedelight.com/move-zeros-present-array-end/
 public class MoveAllZeroesToEnd {
   public static void main(String[] args) {
-    int[] array = StdIn.takeInputAndGetArray();
+    int[] array = StdIn.takeInputAndGetIntArray();
     int[] result = moveAllZeroesToEnd(array);
     Printer.print(result);
   }
