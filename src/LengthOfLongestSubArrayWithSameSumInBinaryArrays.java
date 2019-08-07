@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-
+// https://www.techiedelight.com/length-longest-continuous-sequence-same-sum-binary-arrays/
 public class LengthOfLongestSubArrayWithSameSumInBinaryArrays {
   public static void main(String[] args) {
     int[] first = StdIn.takeInputAndGetIntArray();
