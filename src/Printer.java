@@ -6,6 +6,13 @@ class Printer {
         System.out.println();
     }
 
+    static void print(long[] array) {
+        for (long element : array) {
+            System.out.print(element + " , ");
+        }
+        System.out.println();
+    }
+
     static void print(boolean[] array) {
         for (boolean value :  array) {
             System.out.print(value + " , ");
