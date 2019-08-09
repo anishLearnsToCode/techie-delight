@@ -46,6 +46,13 @@ class Pair {
     this.second = second;
   }
 
+  boolean doesNotOverlap(Pair otherPair) {
+    return this.first != otherPair.first &&
+           this.first != otherPair.second &&
+           this.second != otherPair.first &&
+           this.second != otherPair.second ;
+  }
+
   @Override
   public String toString() {
     return "(" + first + " , " + second + ")";
