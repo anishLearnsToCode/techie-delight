@@ -19,12 +19,13 @@ public class QuadrupletsWithGivenSum {
             return sum == 0;
         }
 
+        //noinspection SimplifiableIfStatement
         if (index == array.length) {
             return false;
         }
 
         return sumExistsInArraySubSequence(array, sum, index + 1, subArrayLength) ||
-                sumExistsInArraySubSequence(array, sum - array[index], index + 1, subArrayLength - 1);
+               sumExistsInArraySubSequence(array, sum - array[index], index + 1, subArrayLength - 1);
     }
 
     // Hashing solution: O(n^3)
@@ -114,7 +115,7 @@ public class QuadrupletsWithGivenSum {
     // and checking for path lengths with 4 O((sum * n)*(n))
     private static boolean hasQuadrupletWithSumUsingDp(int[] array, int sum) {
         boolean[][] sumData = getSumDataFor(array, sum);
-        Set<Tuple<Integer>> tuples = allPossibleTuplesForSum(sumData, sum);
+        Set<Tuple<Integer>> tuples = allPossibleTuplesForSum(sumData, array, sum);
         System.out.println(tuples);
         return containsTupleWithLength(tuples, 4);
     }
@@ -153,12 +154,16 @@ public class QuadrupletsWithGivenSum {
         Set<Tuple<Integer>> possiblePathsToSum = new HashSet<>();
         for (int index = endIndex ; index >= 0 ; index--) {
             if (sumData[sum + 1][index]) {
-                Tuple<Integer> tuple = new Tuple<>(array[index]);
                 Set<Tuple<Integer>> allPaths = allPossibleTuplesForSum(sumData, sum - array[index], array, index - 1);
                 for (Tuple<Integer> path : allPaths) {
-                    tuple.add(path);
+                    if (!Objects.isNull(path) || !path.isEmpty()) {
+                        Tuple<Integer> tuple = new Tuple<>(array[index]);
+                        tuple.add(path);
+                        possiblePathsToSum.add(tuple);
+                    }
                 }
-                possiblePathsToSum.add(tuple);
+            } else {
+                break;
             }
         }
         return possiblePathsToSum;
@@ -226,6 +231,10 @@ public class QuadrupletsWithGivenSum {
 
         int size() {
             return this.set.size();
+        }
+
+        boolean isEmpty() {
+            return set.isEmpty();
         }
 
         void add(Tuple<T> tuple) {
