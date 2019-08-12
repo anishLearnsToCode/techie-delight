@@ -23,8 +23,8 @@ public class PrintAllCombinationsOfPositiveIntegersInIncreasingOrderThatSumToAGi
     }
 
     List<List<Integer>> combinationsForSum = new ArrayList<>();
-    for (int number = 1 ; number <= sum - 1 ; number++) {
-      combinationsForSum.addAll(combineFromIndex(number, allCombinationsThatSumTo(sum - number, combinations), number - 1));
+    for (int number = 1 ; number <= sum / 2 ; number++) {
+      combinationsForSum.addAll(combine(number, allCombinationsThatSumTo(sum - number, combinations)));
     }
 
     List<Integer> sole = new ArrayList<>();
@@ -34,16 +34,19 @@ public class PrintAllCombinationsOfPositiveIntegersInIncreasingOrderThatSumToAGi
     return combinationsForSum;
   }
 
-  private static List<List<Integer>> combineFromIndex(final int number, final List<List<Integer>> combinations,
-          final int startIndex) {
-
+  private static List<List<Integer>> combine(final int number, final List<List<Integer>> combinations) {
     List<List<Integer>> result = new ArrayList<>();
-    for (int index = startIndex ; index < combinations.size() ; index++) {
-      List<Integer> combination = new ArrayList<>();
-      combination.add(number);
-      combination.addAll(combinations.get(index));
-      result.add(combination);
+    for (List<Integer> combination : combinations) {
+      if (combination.get(0) < number) {
+        continue;
+      }
+
+      List<Integer> possiblePathToSum = new ArrayList<>();
+      possiblePathToSum.add(number);
+      possiblePathToSum.addAll(combination);
+      result.add(possiblePathToSum);
     }
+
     return result;
   }
 }
