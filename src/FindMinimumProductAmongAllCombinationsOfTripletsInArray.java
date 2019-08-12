@@ -1,7 +1,6 @@
 import javafx.util.Pair;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // https://www.techiedelight.com/find-minimum-product-triplets-array/
 public class FindMinimumProductAmongAllCombinationsOfTripletsInArray {
