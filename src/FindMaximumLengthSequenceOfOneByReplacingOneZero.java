@@ -8,37 +8,25 @@ public class FindMaximumLengthSequenceOfOneByReplacingOneZero {
     }
 
     private static int zeroReplacementIndex(int[] array) {
-        replaceAllZeroWithNegativeOne(array);
-        Pair<Integer, Integer> maximumSubArraySumIndices = getMaximumSumSubarrayIndices(array);
-        int zeroIndex = findFirstNegativeOne(array, maximumSubArraySumIndices.getKey());
-        return zeroIndex;
-    }
+        int replacementIndex = -1;
+        int[] sequenceLengthEndingAt = new int[array.length];
+        sequenceLengthEndingAt[0] = 1;
 
-    private static void replaceAllZeroWithNegativeOne(int[] array) {
-        for (int index = 0 ; index < array.length ; index++) {
-            array[index] = array[index] == 0 ? -1 : array[index] ;
-        }
-    }
+        for (int index = 1, maxLength = 0, lastZeroIndex = array[0] == 0 ? 0 : -1 ; index < array.length ; index++) {
+            if (array[index] == 0) {
+                sequenceLengthEndingAt[index] = sequenceLengthEndingAt[index - 1] -
+                        (lastZeroIndex == -1 ? 0 : sequenceLengthEndingAt[lastZeroIndex]) + 1;
+                lastZeroIndex = index;
+            } else {
+                sequenceLengthEndingAt[index] = sequenceLengthEndingAt[index - 1] + 1 ;
+            }
 
-    private static Pair<Integer, Integer> getMaximumSumSubarrayIndices(int[] array) {
-        int endIndex = -1, max = Integer.MIN_VALUE;
-
-        for (int index = 0, sum = 0 ; index < array.length ; index++) {
-            sum += array[index];
-            endIndex = sum > max ? index : endIndex;
-            sum = sum < 0 ? 0 : sum;
-            max = Math.max(max, sum);
-        }
-
-        return new Pair<>(endIndex - max, endIndex);
-    }
-
-    private static int findFirstNegativeOne(int[] array, int startIndex) {
-        for (int index = startIndex ; index < array.length ; index++) {
-            if (array[index] == -1) {
-                return index;
+            if (sequenceLengthEndingAt[index] > maxLength) {
+                maxLength = sequenceLengthEndingAt[index];
+                replacementIndex = lastZeroIndex;
             }
         }
-        return -1;
+
+        return replacementIndex;
     }
 }
