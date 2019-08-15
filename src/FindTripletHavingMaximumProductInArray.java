@@ -81,9 +81,9 @@ public class FindTripletHavingMaximumProductInArray {
         }
 
         /***
-         * Adds a number while removing the minimum absolute number present in the Triplet
-         * @param number The number to add in the triplet
-         * @return the smallest number that was removed to add this number. The returned value is a magnitude and
+         * Adds a numberOfActivities while removing the minimum absolute numberOfActivities present in the Triplet
+         * @param number The numberOfActivities to add in the triplet
+         * @return the smallest numberOfActivities that was removed to add this numberOfActivities. The returned value is a magnitude and
          * is hence all positive
          */
         Triplet addToIncrease(int number) {
