@@ -1,9 +1,6 @@
 import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 // https://www.techiedelight.com/matrix-chain-multiplication/
 public class MatrixChainMultiplication {
@@ -17,7 +14,7 @@ public class MatrixChainMultiplication {
     private static Path minimumNumberOfOperations(int[] array) {
         List<Matrix> matrices = matricesFrom(array);
         System.out.println(matrices);
-        return minimumNumberOfOperations(new Vector(matrices));
+        return minimumNumberOfOperations(new Vector(matrices), new HashMap<>());
     }
 
     private static List<Matrix> matricesFrom(int[] array) {
@@ -28,21 +25,30 @@ public class MatrixChainMultiplication {
         return matrices;
     }
 
-    private static Path minimumNumberOfOperations(Vector matrices) {
+    private static Path minimumNumberOfOperations(Vector matrices, Map<Vector, Path> memorized) {
+        if (memorized.containsKey(matrices)) {
+            return memorized.get(matrices);
+        }
+
         switch (matrices.size()) {
-            case 1 : return new Path(matrices.get(0));
-            case 2 : return new Path(matrices.get(0), matrices.get(1));
+            case 1 :
+                memorized.put(matrices, new Path(matrices.get(0)));
+                return memorized.get(matrices);
+            case 2 :
+                memorized.put(matrices, new Path(matrices.get(0), matrices.get(1)));
+                return memorized.get(matrices);
         }
 
         Path answer = new Path();
         for (int i = 1 ; i < matrices.size() ; i++) {
-            Path left = minimumNumberOfOperations(matrices.subMatrices(0, i));
-            Path right = minimumNumberOfOperations(matrices.subMatrices(i));
-            long operations = operations(left.matrix, right.matrix);
+            Path left = minimumNumberOfOperations(matrices.subMatrices(0, i), memorized);
+            Path right = minimumNumberOfOperations(matrices.subMatrices(i), memorized);
+            long operations = operations(Objects.requireNonNull(left.matrix), Objects.requireNonNull(right.matrix));
             if (operations < answer.operations) {
                 answer = new Path(left, right);
             }
         }
+        memorized.put(matrices, answer);
 
         return answer;
     }
