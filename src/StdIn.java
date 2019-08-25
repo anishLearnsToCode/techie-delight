@@ -7,6 +7,10 @@ import java.util.Scanner;
 public class StdIn {
     private static final Scanner SCANNER = new Scanner(System.in);
 
+    public static StringBuilder getStringBuilder() {
+        return new StringBuilder(SCANNER.next());
+    }
+
     public static int[][] getMatrixInput() {
         int rows = getIntInput();
         int columns = getIntInput();
