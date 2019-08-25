@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +13,12 @@ public class StdIn {
 
     public static int getIntInput() {
         return scanner.nextInt();
+    }
+
+    public static Pair<Integer, Integer> getIntPair() {
+        int x = getIntInput();
+        int y = getIntInput();
+        return new Pair<>(x, y);
     }
 
     private static void getInput(int[] array) {
