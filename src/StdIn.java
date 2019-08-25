@@ -5,14 +5,26 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StdIn {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
+
+    public static int[][] getMatrixInput() {
+        int rows = getIntInput();
+        int columns = getIntInput();
+        int[][] matrix = new int[rows][columns];
+
+        for (int row = 0 ; row < rows ; row++) {
+            getIntInput(matrix[row]);
+        }
+
+        return matrix;
+    }
 
     public static void getIntInput(int[] array) {
         getInput(array);
     }
 
     public static int getIntInput() {
-        return scanner.nextInt();
+        return SCANNER.nextInt();
     }
 
     public static Pair<Integer, Integer> getIntPair() {
@@ -23,19 +35,19 @@ public class StdIn {
 
     private static void getInput(int[] array) {
         for (int index = 0 ; index < array.length ; index++) {
-            array[index] = scanner.nextInt();
+            array[index] = SCANNER.nextInt();
         }
     }
 
     private static void getLongInput(long[] array) {
         for (int index = 0 ; index < array.length ; index++) {
-            array[index] = scanner.nextLong();
+            array[index] = SCANNER.nextLong();
         }
     }
 
     private static void getDoubleInput(double[] array) {
         for (int index = 0 ; index < array.length ; index++) {
-            array[index] = scanner.nextDouble();
+            array[index] = SCANNER.nextDouble();
         }
     }
 
@@ -76,7 +88,7 @@ public class StdIn {
         int length = getIntInput();
         List<Integer> list = new ArrayList<>();
         for (int index = 0 ; index < length ; index++) {
-            int value = scanner.nextInt();
+            int value = SCANNER.nextInt();
             list.add(value);
         }
 
